@@ -66,7 +66,7 @@ a:focus {
   height: 150px;
 }
 .navbar{
-  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
   background-color: #1e88e5;
 }
 .desc{
@@ -251,7 +251,7 @@ footer{
 }
 
 .news-detail h1{
-  margin-top: 10%;
+  margin-top: 5%;
   font-weight: 800;
   text-transform: uppercase;
 }
@@ -389,4 +389,85 @@ footer{
 
 .draft{
   height: 100px;
+}
+
+/* timetable */
+
+.hide {
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.accordion {
+  text-align: center;
+  background: #fff;
+  width: 100%;
+  border: 1px solid rgba(0,0,0,0.25);
+}
+
+.accordion-item {
+  position: relative;
+  width: 100%;
+  border-bottom: 1px solid rgba(0,0,0,0.25);
+}
+.accordion-item:last-child {
+  border-bottom: none;
+}
+
+.accordion-label {
+  padding: 20px 0 20px 30px;
+  width: 100%;
+  display: block;
+  font-size: 18px;
+}
+.accordion-label:hover {
+  cursor: pointer;
+}
+.accordion-label:before {
+  content: '';
+  position: absolute;
+  height: 5px;
+  width: 5px;
+  top: 22px;
+  left: 12px;
+  display: inline-block;
+  border-left: 5px solid #999;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+input[type=checkbox]:checked ~ .accordion-label:before {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.accordion-child {
+  margin: 0;
+  overflow: hidden;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  opacity: 0;
+  height: 0;
+  -webkit-transform: scale(1, 0);
+          transform: scale(1, 0);
+  -webkit-transform-origin: center top;
+          transform-origin: center top;
+}
+input[type=checkbox]:checked ~ .accordion-child {
+  border: 1px solid #e0e0e0;
+  margin: 0 -20px 15px -20px;
+  background: #fff;
+  box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.16);
+  padding: 30px;
+  height: auto;
+  opacity: 1;
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+}
+
+label{
+  margin-bottom: 0rem;
 }

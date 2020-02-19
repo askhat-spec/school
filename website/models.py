@@ -7,7 +7,7 @@ class Post(models.Model):
     slug = models.SlugField(max_length=200, unique=True, verbose_name='URL')
     descriptions = models.CharField(max_length=400, verbose_name='Краткое описание')
     cover = models.ImageField(upload_to='images/%Y/%m/%d', verbose_name='Картинка')
-    publish = models.DateField(verbose_name='Дата публикации')
+    publish = models.DateTimeField(verbose_name='Дата публикации')
     text = models.TextField(verbose_name='Текст')
 
     class Meta:
@@ -21,3 +21,16 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('detail', kwargs={'slug':self.slug})    
+
+
+class Timetable(models.Model):
+    grade =  models.CharField(max_length=30, verbose_name='Класс')
+    slug = models.SlugField(max_length=30, unique=True, verbose_name='ID')
+    cover = models.ImageField(upload_to='timetable/%Y/%m/', verbose_name='Картинка')
+    
+    class Meta:
+        verbose_name = 'Расписание'
+        verbose_name_plural = 'Расписании'
+
+    def __str__(self):
+        return self.grade
