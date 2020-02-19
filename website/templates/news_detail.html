@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Главная{% endblock %}
+{% block content %}
+<!-- Page content -->
+  
+    <div class="container">
+        <div class="news-detail">
+          <h1>{{ post.title }}</h1>
+          <p class="date">{{ post.publish }}</p>     
+        </div>
+        <div class="news-body">
+             {{ post.text|safe }}
+        </div>
+    </div>
+<!-- End content -->
+{% endblock %}

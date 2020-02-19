@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+  <meta charset="utf-8">
+  <title>56 школа | {% block title %}{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+  <link rel="icon" href="{% static 'img/favicon.ico' %}">
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+  <!-- Start top header -->
+  <div class="top-header">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div  class="col-xs-12 col-md-3">
+            <a href="{% url 'index' %}"><img src="{% static 'img/school56icon.svg' %}" height="56px" alt="school"></a>
+        </div>
+        <div class="col-xs-0 col-md-6"></div>
+        <div class="col-xs-12 col-md-3">
+          <div class="contacts">
+            <h6><i class="fas fa-phone "></i> +7 (7132) 44-57-91</h6>
+            <h6><i class="fas fa-paper-plane"></i> shkola_56@bk.ru</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End top header -->
+
+  <!-- Start navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbars">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link active" href="{% url 'index' %}"><i class="fas fa-home"></i> Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'news' %}"><i class="far fa-newspaper"></i> Новости</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}#about"><i class="fas fa-school"></i> О школе</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ещё</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown07">
+              <a class="dropdown-item" href="{% url 'teachers' %}"><i class="fas fa-chalkboard-teacher"></i> Учителя</a>
+              <a class="dropdown-item" href="{% url 'timetable' %}"><i class="fas fa-clipboard-list"></i> Расписании</a>
+              <a class="dropdown-item" href="{% url 'awards' %}"><i class="fas fa-trophy"></i> Награды</a>
+            </div>
+          </li>
+        </ul>
+        <form action="#" role="search">
+          <div class="input-group">
+              <input type="text" name="query" class="form-control" placeholder="Что найти?" value="">
+              <span class="input-group-btn">
+                  <button type="submit" class="btn btn-danger">Поиск</button>
+              </span>
+          </div>
+      </form>
+      </div>
+    </div>
+  </nav>
+  <!-- End navbar -->
+
+  {% block content %}
+  {% endblock %}
+
+
+  <!-- Footer -->
+  <div class="footer py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <div class="iframe-container">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2103.3090898776923!2d57.18906595343481!3d50.27519383140107!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x418223e01664bd37%3A0x9483be7201c1cab7!2z0KHRgNC10LTQvdGP0Y8g0YjQutC-0LvQsCDihJYgNTY!5e0!3m2!1sru!2skz!4v1580832019499!5m2!1sru!2skz" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+            <address>
+                <h4 class="text-white">Адрес школы</h4><br>
+                <p class="text-white">12 микрорайон, улица Шайкенова 15</p>
+                <p class="text-white">Актобе 030008</p>
+            </address><hr>
+            <div class="contact">
+                <h4 class="text-white">Мы в соцсетях</h4><br>
+                <a href="http://instagram.com"><i class="fab fa-instagram fa-3x" ></i></a>
+                <a href="http://vk.com"><i class="fab fa-vk fa-3x"></i></a>
+                <a href="http://facebook.com"><i class="fab fa-facebook fa-3x"></i></a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="py-3">
+    <div class="container">
+      <p class="m-0 text-center text-white">ГУ "№56 средняя общеобразовательная школа" <br> &copy;2020</p>
+    </div>
+  </footer>
+
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

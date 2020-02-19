@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Главная{% endblock %}
+{% block content %}
+<!-- Page content -->
+  
+<div class="breadCumb bg-img" style="background-image: url({% static 'img/f2.jpg' %});">
+    <div class="content">
+      <h2>Новости</h2>
+    </div>
+  </div>
+  {% for post in object_list %}
+  <div class="container">
+    <div class="school-news">
+    <div class="row">
+      <div class="col-12">
+        <div class="single-post">
+          <div class="row">
+            <div class="col-xs-12 col-md-4">
+              <div class="picture">
+                <img src="{{ post.cover.url}}" alt="{{ post.title }}">
+              </div>
+            </div>
+            <div class="col-xs-12 col-md-8">
+              <a href="{{ post.get_absolute_url }}" class="post-title">{{ post.title }}</a>
+              <p class="date">{{ post.publish }}</p>
+              <p>{{ post.descriptions }}</p>
+              <div class="post-button">
+                <div class="btn btn-primary">
+                  <a href="{{ post.get_absolute_url }}">Читать дальше</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  {% endfor %}
+  <!-- End content -->
+  <br/><br/>
+
+  {% endblock %}
