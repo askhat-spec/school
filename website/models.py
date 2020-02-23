@@ -49,3 +49,14 @@ class Teachers(models.Model):
         return self.name
 
 
+class Awards(models.Model):
+    name = models.CharField(max_length=200, verbose_name='ФИО')
+    medalist = models.CharField(max_length=600, verbose_name='Достижении')
+    cover = models.ImageField(upload_to='awards/%Y/%m', verbose_name='Фото')
+
+    class Meta:
+        verbose_name = 'Призёр'
+        verbose_name_plural = 'Призёры'
+    
+    def __str__(self):
+        return self.name
