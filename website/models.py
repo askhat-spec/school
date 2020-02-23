@@ -34,3 +34,18 @@ class Timetable(models.Model):
 
     def __str__(self):
         return self.grade
+
+
+class Teachers(models.Model):
+    name = models.CharField(max_length=200, verbose_name='ФИО')
+    place = models.CharField(max_length=300, verbose_name='Должность')
+    cover = models.ImageField(upload_to='teachers/%Y/%m', verbose_name='Фото')
+
+    class Meta:
+        verbose_name = 'Учитель'
+        verbose_name_plural = 'Учителя'
+    
+    def __str__(self):
+        return self.name
+
+

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
-from .models import Post, Timetable
+from .models import Post, Timetable, Teachers
 
 
 def detail_view(request, slug):
@@ -24,8 +24,14 @@ def index(request):
     return render(request, 'index.html', {})
 
 
-def teachers(request):
-    return render(request, 'teachers.html', {})
+# def teachers(request):
+#     return render(request, 'teachers.html', {})
+
+class TeachersPageView(ListView):
+    model = Teachers
+    queryset = Teachers.objects.all()
+    template_name = 'teachers.html'
+
 
 
 def awards(request):
