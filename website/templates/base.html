@@ -12,6 +12,11 @@
   <link href="{% static 'css/style.css' %}" rel="stylesheet">
 </head>
 <body>
+  <!-- Loader -->
+  <div class="loader">
+      <img src="{% static 'img/loading.gif' %}" alt="Loading..." />
+  </div>
+
   <!-- Start top header -->
   <div class="top-header">
     <div class="container">
@@ -106,7 +111,12 @@
       <p class="m-0 text-center text-white">ГУ "№56 средняя общеобразовательная школа" <br> &copy;2020</p>
     </div>
   </footer>
-
+  <script type="text/javascript">
+    window.addEventListener("load", function () {
+        const loader = document.querySelector(".loader");
+        loader.className += " hidden"; // class "loader hidden"
+    });
+  </script> 
   <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
   <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 </body>
