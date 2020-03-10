@@ -84,6 +84,49 @@
     </div>
   </div>
 
+  <!-- Short news -->
+  <div class="container">
+    <div class="short-news">
+      <h2>Последние новости:</h2>
+      {% for post in object_list %}
+        <div class="container">
+          <div class="school-news" id="target">
+          <div class="row">
+            <div class="col-12">
+              <div class="single-post">
+                <div class="row">
+                  <div class="col-xs-12 col-md-4">
+                    <div class="picture">
+                      <img src="{{ post.cover.url }}" alt="{{ post.title }}">
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-md-8">
+                    <a href="{{ post.get_absolute_url }}" class="post-title">{{ post.title }}</a>
+                    <p class="date">{{ post.publish }}</p>
+                    <p>{{ post.descriptions }}</p>
+                    <div class="post-button">
+                      <div class="btn btn-primary">
+                        <a href="{{ post.get_absolute_url }}">Читать дальше &raquo;</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+        <div class="container mt-50" style="text-align: center" >
+          <div class="btn btn-primary">
+            <a href="{% url 'news' %}">Больше &raquo;</a>
+        </div>
+      </div>
+    </div><br><br><hr>
+  </div>
+
+
+
   <div class="title">
     <div class="desc">
       <h2>Внеклассные занятии для учащихся</h2>

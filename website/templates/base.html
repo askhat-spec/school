@@ -103,6 +103,7 @@
       <p class="m-0 text-center text-white">ГУ "№56 средняя общеобразовательная школа" <br> &copy;2020</p>
     </div>
   </footer>
+  <div id="scroller"></div>
   <script type="text/javascript">
     window.addEventListener("load", function () {
         const loader = document.querySelector(".loader");
@@ -110,6 +111,26 @@
     });
   </script> 
   <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script language="JavaScript">
+		$(document).ready(function(){   
+			//fade in/out based on scrollTop value
+			$(window).scroll(function () {
+				if ($(this).scrollTop() > 0) {
+					$('#scroller').fadeIn();
+				} else {
+					$('#scroller').fadeOut();
+				}
+			});
+		 
+			// scroll body to 0px on click
+			$('#scroller').click(function () {
+				$('body,html').animate({
+					scrollTop: 0
+				}, 400);
+				return false;
+			});
+		});
+	</script>
   <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 </body>
 </html>

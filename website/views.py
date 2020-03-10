@@ -3,8 +3,10 @@ from django.views.generic import ListView
 from .models import Post, Timetable, Teachers, Awards
 
 
-def index(request):
-    return render(request, 'index.html', {})
+class MainPageView(ListView):
+    model = Post
+    queryset = Post.objects.order_by('id').reverse()[:2]
+    template_name = 'index.html'
 
 
 def news_detail_view(request, slug):
