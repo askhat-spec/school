@@ -11,12 +11,13 @@ class MainPageView(ListView):
 
 def news_detail_view(request, slug):
     post = Post.objects.get(slug__iexact = slug)
-    return render(request, 'news_detail.html', context={'post':post})
+    return render(request, 'news_detail.html', context={'post':post, 
+                                                        'object':Post.objects.get(slug = slug)})
 
 
 class NewsPageView(ListView):
     model = Post
-    paginate_by = 1
+    paginate_by = 3
     queryset = Post.objects.all()
     template_name = 'news.html'
 

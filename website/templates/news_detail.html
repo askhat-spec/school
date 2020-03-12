@@ -14,6 +14,11 @@
         </div>
     </div>
     <br>
+    <br><hr>
+    <div class="container">
+      {% include 'include/comments.html' with url=object.slug %}
+    </div>
+    <br>
     <br>
 <!-- End content -->
 {% endblock %}
