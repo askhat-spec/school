@@ -516,7 +516,6 @@ label{
   }
 }
 
-
 .short-news{
   height: auto;
   width: 100%;
@@ -548,4 +547,8 @@ label{
   height: 50px;
   cursor: pointer;
   display:none;
+}
+
+.page-link{
+  font-size: 16px;
 }

@@ -36,7 +36,7 @@ class TeachersAdmin(admin.ModelAdmin):
 
 @admin.register(Awards)
 class AwardsAdmin(admin.ModelAdmin):
-    # Учителя
+    # Награды
     list_display = ("name", "get_image")
     readonly_fields = ("get_image",)
 

@@ -12,10 +12,12 @@
         <div class="news-body">
              {{ post.text|safe }}
         </div>
-    </div>
     <br>
+    <h4>Поделиться в:</h4>
+    <script src="https://yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+    <script src="https://yastatic.net/share2/share.js"></script>
+    <div class="ya-share2" data-services="vkontakte,facebook,odnoklassniki,whatsapp,telegram"></div>
     <br><hr>
-    <div class="container">
       {% include 'include/comments.html' with url=object.slug %}
     </div>
     <br>
