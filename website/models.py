@@ -11,7 +11,7 @@ class Post(models.Model):
     text = models.TextField(verbose_name='Текст')
 
     class Meta:
-        ordering = ('-id','-publish',)
+        ordering = ('-publish',)
         verbose_name = 'Новость'
         verbose_name_plural = 'Новости'
 

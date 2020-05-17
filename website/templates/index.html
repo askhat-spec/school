@@ -16,14 +16,14 @@
               <img src="{% static 'img/bg-img/k43.jpg' %}" class="d-block w-100" alt="">
           </div>
       </div>
-      <!-- <a class="carousel-control-prev" href="#sliderFade" role="button" data-slide="prev">
+      <a class="carousel-control-prev" href="#sliderFade" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
       </a>
       <a class="carousel-control-next" href="#sliderFade" role="button" data-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
-      </a> -->
+      </a>
   </div>
   <!-- End Carousel -->
 
@@ -97,18 +97,15 @@
                 <div class="row">
                   <div class="col-xs-12 col-md-4">
                     <div class="picture">
-                      <img src="{{ post.cover.url }}" alt="{{ post.title }}">
+                      <a href="{{ post.get_absolute_url }}">
+                        <img src="{{ post.cover.url }}" alt="{{ post.title }}">
+                      </a>
                     </div>
                   </div>
                   <div class="col-xs-12 col-md-8">
                     <a href="{{ post.get_absolute_url }}" class="post-title">{{ post.title }}</a>
+                    <p class="post-description">{{ post.descriptions }}</p>
                     <p class="date">{{ post.publish }}</p>
-                    <p>{{ post.descriptions }}</p>
-                    <div class="post-button">
-                      <div class="btn btn-primary">
-                        <a href="{{ post.get_absolute_url }}">Читать дальше &raquo;</a>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
