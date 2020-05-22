@@ -84,6 +84,7 @@
     </div>
   </div>
 
+  {% if object_list %}
   <!-- Short news -->
   <div class="container">
     <div class="short-news">
@@ -116,12 +117,12 @@
       {% endfor %}
         <div class="container mt-50" style="text-align: center" >
           <div class="btn btn-primary">
-            <a href="{% url 'news' %}">Больше &raquo;</a>
+            <a href="{% url 'news' %}">Ещё &raquo;</a>
         </div>
       </div>
     </div><br><br><hr>
   </div>
-
+  {% endif %}
 
 
   <div class="title">

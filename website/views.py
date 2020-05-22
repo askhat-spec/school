@@ -1,18 +1,17 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from .models import Post, Timetable, Teachers, Awards
 
 
 class MainPageView(ListView):
     model = Post
-    queryset = Post.objects.order_by('publish').reverse()[:2]
+    queryset = Post.objects.all()[:2]
     template_name = 'index.html'
 
 
-def news_detail_view(request, slug):
-    post = Post.objects.get(slug__iexact = slug)
-    return render(request, 'news_detail.html', context={'post':post, 
-                                                        'object':Post.objects.get(slug = slug)})
+class PostDetailView(DetailView):
+    model = Post
+    template_name = 'news_detail.html'
 
 
 class NewsPageView(ListView):
@@ -30,14 +29,14 @@ class TimetablePageView(ListView):
 
 class TeachersPageView(ListView):
     model = Teachers
-    paginate_by = 16
+    paginate_by = 20
     queryset = Teachers.objects.all()
     template_name = 'teachers.html'
 
 
 class AwardsPageView(ListView):
     model = Awards
-    paginate_by = 16
+    paginate_by = 20
     queryset = Awards.objects.all()
     template_name = 'awards.html'
 
